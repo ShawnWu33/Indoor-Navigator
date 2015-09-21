@@ -9,7 +9,7 @@ public class Tile {
 		this.fCost = f;
 		this.type = type;
 	}
-//test
+//test1324
 
 	public int getgCost() {
 		return gCost;
