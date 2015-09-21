@@ -10,6 +10,7 @@ public class Tile {
 		this.type = type;
 	}
 //test1324
+	//sb
 
 	public int getgCost() {
 		return gCost;
