@@ -11,6 +11,7 @@ public class Test {
 			current.getU().setfCost(current.getU().getgCost()+current.getU().gethCost());
 			children.add(current.getU());
 		}
+		//67ruyr
 		if (current.getUR() != null) {
 			current.getUR().setgCost(current.getgCost()+1);
 			current.getUR().setfCost(current.getUR().getgCost()+current.getUR().gethCost());

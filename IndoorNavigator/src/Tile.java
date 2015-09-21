@@ -1,7 +1,7 @@
 public class Tile {
 	private int gCost,hCost,fCost;
 	private TileType type;
-	private Tile U,UR,R,RD,D,LD,L,LU;
+	private Tile U,UR,R,RD,D,LD,L,LU, parent;
 	
 	public Tile(int g,int h ,int f, TileType type){
 		this.gCost = g;
@@ -9,9 +9,7 @@ public class Tile {
 		this.fCost = f;
 		this.type = type;
 	}
-//test1324
-	//sb
-	//test 3
+	
 
 	public int getgCost() {
 		return gCost;
@@ -109,7 +107,15 @@ public class Tile {
 		LU = lU;
 	}
 	
-	//hello merge test
+	public void setParent(Tile parent) {
+		this.parent = parent;
+	}
+	
+	public Tile getParent() {
+		return parent;
+	}
+	
+	
 	
 	
 }
