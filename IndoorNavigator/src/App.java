@@ -63,10 +63,7 @@ public class App {
 			@Override
 			public int compare(Tile o1, Tile o2) {
 				// TODO Auto-generated method stub
-				if(o1.getfCost()>=o2.getfCost()){
-					return 1;
-				}
-				return 0;
+				return o2.getfCost() - o1.getfCost();
 			}
 		};
 		PriorityQueue<Tile> test = new PriorityQueue<>(testComparator);
