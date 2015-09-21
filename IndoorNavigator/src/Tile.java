@@ -11,6 +11,7 @@ public class Tile {
 	}
 //test1324
 	//sb
+	//test 3
 
 	public int getgCost() {
 		return gCost;
