@@ -1,5 +1,6 @@
 
 public enum TileType {
+	Foodcourt("foodcourt",true),
 	Path("path",true),
 	Wall("wall",false),
 	Shop0("pharmacy",true),
