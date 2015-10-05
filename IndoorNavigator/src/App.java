@@ -240,8 +240,8 @@ public class App {
 
 		Tile startTile = getLocationTile(initialLocation, map);
 		Tile destinationTile = getLocationTile(destination, map);
-		startTile = map.getTile(16, 14);
-		destinationTile = map.getTile(16, 13);
+		startTile = map.getTile(13, 12);
+		destinationTile = map.getTile(28, 9);
 		//set H cost
 		for(int i =0;i<=39;i++){
 			for(int j=0;j<=24;j++){
@@ -254,6 +254,7 @@ public class App {
 		if (startTile != null && destinationTile != null) {
 			ArrayList<String>path = aStarPathFinding(startTile, destinationTile, map);
 			System.out.println(path);
+			get_route_description(path,map,startTile);
 			if (path == null) {
 				
 				System.out.println("Failure: cannot find a path.");
@@ -267,5 +268,88 @@ public class App {
 			System.exit(0);
 		}
 	}
+
+	private void get_route_description(ArrayList<String> path, Map map, Tile startTile) {
+		// TODO Auto-generated method stub
+		int counter=0;
+		int x = startTile.getX();
+		int y = startTile.getY();
+		Tile current_position = map.getTile(x, y);
+		String current_direction=null,current_facing=null;
+		if(startTile.getDirection()!=null){
+			if(startTile.getDirection()=="R"){
+				current_direction=startTile.getDirection();
+				current_facing = "East";
+			}
+			if(startTile.getDirection()=="L"){
+				current_direction=startTile.getDirection();
+				current_facing = "West";
+				}
+			if(startTile.getDirection()=="U"){
+				current_direction=startTile.getDirection();
+				current_facing = "North";
+				}
+			if(startTile.getDirection()=="D"){
+				current_direction=startTile.getDirection();
+				current_facing = "South";
+				}
+		}
+		for(int i=0; i<path.size();i++){
+			if(path.get(i)==current_direction){
+				current_position = move(path.get(i),current_position);
+				counter ++;
+				continue;
+			}
+			if(path.get(i)!=current_direction){
+				current_direction = path.get(i);
+				if(counter!=0){
+					current_position = move(path.get(i),current_position);
+					System.out.println("Keep Moving forward for "+ counter+" meter");
+					System.out.println("Then turn "+ path.get(i));
+					counter =0;
+				}
+				else if(counter == 0){
+					current_position = move(path.get(i),current_position);
+					counter =1;
+					System.out.println("Turn "+ path.get(i) +" walk for " + counter +" meter");
+					counter =0;
+				}
+				continue;
+			}
+		}
+			
+		
+	}
+
+	private Tile move(String current_direction, Tile current_position) {
+		// TODO Auto-generated method stub
+		if(current_direction=="R"){
+			return current_position.getR();
+		}
+		else if(current_direction=="D"){
+			return current_position.getD();
+		}
+		else if(current_direction=="L"){
+			return current_position.getL();
+		}
+		else if(current_direction=="LD"){
+			return current_position.getLD();
+		}
+		else if(current_direction=="LU"){
+			return current_position.getLU();
+		}
+		else if(current_direction=="RD"){
+			return current_position.getRD();
+		}
+		else if(current_direction=="U"){
+			return current_position.getU();
+		}
+		else if(current_direction=="UR"){
+			return current_position.getUR();
+		}
+		return current_position;
+	}
+
+
 
 }

@@ -2,7 +2,59 @@ public class Tile {
 	private int gCost,hCost,fCost,x,y;
 	private TileType type;
 	private Tile U,UR,R,RD,D,LD,L,LU, parent;
+	private String U_description=null,D_description=null,L_description=null,R_description=null,direction =null;
 	
+	
+	public String getU_description() {
+		return U_description;
+	}
+
+
+	public void setU_description(String u_description) {
+		U_description = u_description;
+	}
+
+
+	public String getD_description() {
+		return D_description;
+	}
+
+
+	public void setD_description(String d_description) {
+		D_description = d_description;
+	}
+
+
+	public String getL_description() {
+		return L_description;
+	}
+
+
+	public void setL_description(String l_description) {
+		L_description = l_description;
+	}
+
+
+	public String getR_description() {
+		return R_description;
+	}
+
+
+	public void setR_description(String r_description) {
+		R_description = r_description;
+	}
+
+
+	public String getDirection() {
+		return direction;
+	}
+
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}
+
+
 	public Tile(int g,int h ,int f, TileType type,int x, int y){
 		this.gCost = g;
 		this.hCost = h;
@@ -12,6 +64,9 @@ public class Tile {
 		this.y = y;
 	}
 	
+
+
+
 
 	public int getX() {
 		return x;
