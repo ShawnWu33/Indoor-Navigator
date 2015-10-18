@@ -3,7 +3,9 @@ public enum TileType {
 	Foodcourt("foodcourt",true),
 	MonashConnect("monash connect",true),
 	Medicare("medicare",true),
-	
+	NWGate("north west gate",true),
+	SWGate("south west gate",true),
+	NEGate("north east gate",true),
 	Path("path",true),
 	Wall("wall",false),
 	Stairs("stairs",true),

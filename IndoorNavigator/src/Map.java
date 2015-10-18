@@ -3,6 +3,15 @@ import java.util.ArrayList;
 
 public abstract class Map {
 	private String startLoc,endLoc;
+	double scale;
+	public double getScale() {
+		return scale;
+	}
+
+	public void setScale(double scale) {
+		this.scale = scale;
+	}
+
 	Tile[][] mapMatrix;
 	
 	public Tile[][] getMapMatrix() {
